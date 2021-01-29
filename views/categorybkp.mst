@@ -1,0 +1,178 @@
+{{>header}}
+<link rel="stylesheet" href="/assets/css/cards.css"/>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="/assets/css/ads.css"/>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container ">
+         <h2 class="text-light"><strong>Encontre ou anuncie seu imóvel</strong></h2> 
+        <form method="post" action="/buscarTitulo">
+            <div class="row justify-content-start">
+                <div class="card-body">                    
+                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> 
+                        <div class="input-group"> 
+                         <input type="hidden" name="idAd" id="idAd">         
+                          
+                            <input type="text" class="form-control height-search searchButtonBoxr" id="search" name="search" placeholder="Digite o que você procura..." aria-label="Text input with dropdown button">
+                            <div class="input-group-append searchButtonBox">
+                                <button class="btn btn-outline-secondary  searchSubmitBtn " type="submit"><i class="fas fa-search h4"></i></button>
+                             </div>
+                        </div>
+                    </div>
+                     </div>
+                </div>
+            </div>    
+        </form>
+    </div>
+</div>   
+<div class="container">
+    <div class="row">
+        <div class=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <nav aria-label="breadcrumb  ">
+              <ol class="breadcrumb">
+                {{#rentAndSale}}<li class="breadcrumb-item"><a href="#"> {{rentAndSale}} </a></li>{{/rentAndSale}}
+                {{#typeImmobile}}<li class="breadcrumb-item"><a href="#">{{typeImmobile}}</a></li> {{/typeImmobile}}
+               
+              </ol>
+            </nav>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+           
+            <div class="list-group">
+              
+                <a href="#" class="list-group-item  list-group-item-action active">
+                    Filtrar
+                </a>
+
+                    <li class="list-group-item list-group-item-action">
+                      <form method="post" action="/buscar" class="list-group">
+                            <strong>Tipo</strong>
+                            <div class="form-label-group">
+                                <select class="custom-select form-control rentAndSale" name="rentAndSale" id="select-rentAndSale" alt="Tipo do Anúncio" required="">
+                                </select>
+                            </div>
+    
+                   </li>
+                     <li class="list-group-item list-group-item-action">
+                            <strong>Imóvel</strong>
+                            <select class="form-control" name="typeImmobile" id="select-residential" alt="Tipo do Imóvel">
+                                <option value="">Todos</option>   
+                                {{#categorys}}
+                                    <option value="{{_id}}">{{_id}}</option>
+                                {{/categorys}}
+                            </select>    
+                   </li>    
+                     <li class="list-group-item list-group-item-action text-center">
+                        <button class="btn btn-outline-secondary  searchSubmitBtn " type="submit"><i class="fas fa-search"></i> Filtrar</button>   
+                        </form>   
+                    </li>    
+            
+             
+            </div>        
+            <div class="list-group">
+                <a href="#" class="list-group-item  list-group-item-action active">
+                    Categorias
+                </a>
+                {{#category}}
+                    <a href="/buscar?t={{_id}}" target="blank" class="list-group-item list-group-item-action {{class}}">{{_id}} ({{count}})</a>
+                {{/category}}
+            </div>
+            
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    Estados
+                </a>
+                {{#state}}
+                    <a href="/estado?t={{_id}}"  target="blank" class="list-group-item list-group-item-action {{class}}">{{_id}} ({{count}})</a>
+                {{/state}}
+                
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 {{ads.classblockAds}}">
+               <div class="alert alert-secondary text-center  " role="alert">
+                    Não foi encontrado nenhum resultado...
+            </div>       
+         </div>
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 {{ads.classNoneAds}}">
+            <table class="table-card " id="card-category">
+                <thead class="table-card">
+                    <tr>
+                        <th> </th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="table-card">
+                    <tr>
+                        <td>
+                            
+                            <div class="row" id="ads">
+                                {{#ads}}
+                                    <div class="col-12 col-md-6 col-sm-6 col-lg-4 margin-bottom-card">
+                                        <a  href="anuncio/{{slug}}/id/{{_id}}" class="link-view">
+                                            <div class="card rounded">
+                                                <div class="card-image">
+                                                    {{#category}}<span class="card-notify-badge">{{category}}</span>{{/category}}
+                                                    {{#rentAndSale}}<span class="card-notify-rent-and-sale">{{rentAndSale}}</span>{{/rentAndSale}}
+                                                    <img class="img-fluid"  src="/media/{{photos.0}}" alt="Alternate Text" style="height:200px;" />
+                                                </div>
+                                                <div class="card-body text-center" style="margin-top:-30px;margin-bottom:-10px;"><strong>{{immobiles.typeImmobile}} em {{immobiles.adress.neighb}}, {{immobiles.adress.city}} - {{immobiles.adress.state}}</strong></div>
+                                                <div class="card-image-overlay m-auto text-center" style="height:80px;">
+                                                    {{#immobiles.usefulArea}}<span class="card-detail-badge">{{immobiles.usefulArea}} m² util</span>{{/immobiles.usefulArea}}
+                                                    {{#immobiles.totalArea}}<span class="card-detail-badge">{{immobiles.totalArea}} m² total</span>{{/immobiles.totalArea}}
+                                                    {{#immobiles.bedrooms}}<span class="card-detail-badge">{{immobiles.bedrooms}} quarto(s)</span>{{/immobiles.bedrooms}}
+                                                    {{#immobiles.bathrooms}}<span class="card-detail-badge">{{immobiles.bathrooms}} banheiro(s)</span>{{/immobiles.bathrooms}}
+                                                    {{#immobiles.suites}}<span class="card-detail-badge">{{immobiles.suites}} suíte</span>{{/immobiles.suites}}
+                                                    {{#immobiles.vacancy}}<span class="card-detail-badge">{{immobiles.vacancy}} vaga(s)</span>{{/immobiles.vacancy}}
+                                                    {{#immobiles.floor}}<span class="card-detail-badge">{{immobiles.floor}}º andar</span>{{/immobiles.floor}}
+                                                </div>
+                                                {{#immobiles.saleValue}}
+                                                <div class="card-body text-center">
+                                                    <div class="ads-btn">R$ {{immobiles.saleValue}}</div>
+                                                </div>
+                                                {{/immobiles.saleValue}}
+                                            </div>
+                                        </a>
+                                    </div>
+            
+                                {{/ads}}
+                            </div>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="div-margin-bottom"></div>
+{{>footer}}
+<script src="/assets/js/jquery-ui.min.js"></script>
+<script src="/assets/js/template.js"></script>
+<script>
+	$(function() {
+		$('#card-category').DataTable();
+	});
+	$("#card-category").dataTable({
+		"bJQueryUI": true,
+		"oLanguage": {
+			"sProcessing": "Processando...",
+			"sLengthMenu": "Mostrar _MENU_ registros",
+			"sZeroRecords": "Você não tem anúncios publicados",
+			"sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+			"sInfoEmpty": "Mostrando de 0 até 0 de 0 registros",
+			"sInfoFiltered": "",
+			"sInfoPostFix": "",
+			"sSearch": "Buscar:",
+			"sUrl": "",
+			"oPaginate": {
+				"sFirst": "Primeiro",
+				"sPrevious": "Anterior",
+				"sNext": "Seguinte",
+				"sLast": "Último"
+                
+			}
+		}
+	});
+</script>
+

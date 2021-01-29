@@ -1,0 +1,26 @@
+.footer{
+	margin-top: 30px;
+}
+
+img {width:100%;}
+.car-image-block {padding:0px;margin:0px;}
+.car-image-block img {min-height: 200px; overflow: hidden;}
+.infoBox { background-color: #FFF; width: 300px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border: 2px solid #3fa7d8; border-radius: 3px; margin-top: 10px }
+.infoBox p { padding: 0 15px }
+.infoBox:before { border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #3fa7d8; top: -10px; content: ""; height: 0; position: absolute; width: 0; left: 138px }
+
+.box-shodow{
+	-webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.3);
+	box-shadow: 0 5px 15px 0 rgba(0,0,0,0.3);
+}
+.img-thumb{
+    max-height: 100px !important;
+    min-height: 100px !important;
+	min-width: 100px !important;
+	max-width: 100px !important;
+  }
+  
+  .dataTables_wrapper .dataTables_filter{
+	text-align: left !important;
+	font-weight: bold;
+  }

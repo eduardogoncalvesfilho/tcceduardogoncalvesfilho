@@ -1,0 +1,40 @@
+.only-print{
+    display:  none;
+}
+@media print{
+    .no-print{
+        display: none;
+    }
+    .only-print{
+        display: block;
+    }
+    .container2{
+        min-height: auto;
+    }
+}
+
+.xpto{
+    width:600px;
+    height:1000px;
+    background:white;
+    padding:5px;
+}
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 225px;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+.photos{
+ margin-top: -4px;
+
+}

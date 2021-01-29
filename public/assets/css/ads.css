@@ -1,0 +1,47 @@
+
+.title {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 5;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    margin-top:20px;
+    -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.3);
+}
+
+
+.btn {
+  margin-top: auto;
+}
+table.dataTable thead th, table.dataTable thead td {
+    padding: 0px 0px !important;
+    border-bottom: 0px solid #111 !important;
+}
+  
+.dataTables_wrapper .dataTables_filter{
+	text-align: left !important;
+	font-weight: bold;
+  }
+  .link-view{
+    text-decoration: none !important;
+    color: #000;
+  }
+  .link-view:hover{
+
+    color: #000;
+  }
+  .dataTables_wrapper .dataTables_filter input {
+
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.3);
+    margin-right: 9px;
+    border-radius: 3px;
+}

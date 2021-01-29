@@ -1,0 +1,68 @@
+{{>header}}
+    <link rel="stylesheet" href="/assets/css/form.css"/>
+<div class="container">
+    <div class="wrapper">
+        <div id="formContent">
+
+            <form method="post" class="form-signin needs-validation" novalidate autocomplete="off">
+                <div class="d-flex justify-content-end">
+                    <a href="/usuarios" class="btn text-uppercase btn-return-users">Voltar</a>
+                </div>                
+                <h4 class="mb-0">Dados do Usuário</h4>  
+                <div class="form-label-group">
+                    <input type="text" name="name" id="name" class="form-control"  placeholder="Nome"  disabled value="{{user.username}}" autofocus>
+                        <label for="name">Nome</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="email" name="email" id="email" class="form-control"  placeholder="E-mail"  disabled value="{{user.email}}" >
+                    <label for="email">E-mail</label>
+                </div> 
+                <div class="form-label-group">
+                    <input type="tel" name="phone" id="phone" class="form-control phone"  placeholder="Telefone"  disabled value="{{user.phone}}" >
+                    <label for="phone">Telefone</label>
+                </div>   
+                <div class="form-label-group">
+                    <input type="text" name="zipCode" id="zipCode" class="form-control zipCode"  placeholder="CEP"  disabled value="{{user.zipCode}}" autofocus>
+                    <label for="zipCode">CEP</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text"   name="street" id="street" class="form-control"  placeholder="Rua" alt="Rua" disabled value="{{user.street}}">
+                    <label for="street">Rua</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text"   name="number"  id="number" class="form-control" disabled  placeholder="Número" alt="Número" value="{{user.number}}">
+                    <label for="number">Número</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text"   name="neighb"   id="neighb" class="form-control" placeholder="Bairro" alt="Bairro" disabled value="{{user.neighb}}">
+                    <label for="neighb">Bairro</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text"   name="city"   id="city" class="form-control" placeholder="Cidade" alt="Cidade" disabled value="{{user.city}}">
+                    <label for="city">Cidade</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text"   name="state"  id="state" class="form-control"    placeholder="Estado" alt="Estado" disabled value="{{user.state}}">
+                    <label for="state">Estado</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" name="complement"  id="complement" class="form-control" placeholder="Complemento"  alt="Complemento" disabled  value="{{user.complement}}">
+                    <label for="complement">Complemento</label>
+                </div>
+                <div class="form-label-group">
+                    <input type="text" name="referencePoint" id="referencePoint" class="form-control"   placeholder="Ponto de referência" disabled alt="Ponto de referência" value="{{user.referencePoint}}">
+                    <label for="referencePoint">Ponto de referência</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="div-margin-bottom"></div>
+<div class="div-margin-bottom"></div>
+<div class="div-margin-bottom"></div>
+{{>footer}}
+
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+{{>header}}
+<link rel="stylesheet" href="/assets/css/style.css"/>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+<div class="container container2">
+        <div class="row">
+
+            <div class="col-12 col-sm-12">
+                <h3>Anúncios</h3>
+            </div>
+           <div class="col-12 col-sm-12 mb-3">
+                <form method="post" action="/anuncios" autocomplete="off"  role="form">
+                    <div class="row">
+                       <div class="col-12 col-sm-3">
+                            <div class="form-group">
+                                <label for="status"><strong>Status</strong></label>
+                                <select class="form-control" name="status" id="status" alt="Status">
+                                    <option value="">Todos os Status</option>
+                                    <option value="Publicado">Publicados</option>
+                                    <option value="Pausado">Pausados</option>
+                                </select>
+                            </div>                    
+                        </div>
+                        <div class="col-12 col-sm-3">
+                            <div class="form-group">
+                                <label for="startDate"><strong>Data Início</strong></label>
+                                <input type="date"   name="startDate"  id="startDate" class="form-control"    placeholder="__/__/____" alt="Data Início">
+                            </div>                    
+                        </div>
+                        <div class="col-12 col-sm-3">
+                            <div class="form-group">
+                                <label for="finalDate"><strong>Data Final</strong></label>
+                                <input type="date"   name="finalDate"  id="finalDate" class="form-control  "    placeholder="__/__/____" alt="Data Início">
+                            </div>                    
+                        </div>
+                        <div class="col-12 col-sm-3 mt-1">
+                         <label for="submit"><strong> </strong></label>
+                        <div class="d-flex justify-content-left">
+                             <button  class="mt-1 p-2 btn btn-sm btn-primary" id="submit" type="submit">Filtrar</button>              
+                        </div> 
+                        </div>               
+                    </div>
+             
+                </form>
+            </div>
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table" id="table_ads">
+                        <thead>
+                            <tr class="h5">
+                            <th>Ref.</th>
+                            <th> </th>
+                            <th>Anúncios</th>
+                            <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#ads}}
+                            <tr>
+                            <td>  {{#codeRef}} <span class="badge badge-dark">Ref. {{codeRef}}</span>{{/codeRef}}{{#created}}<p><span class="badge badge-info"><strong>{{created}}</strong></span></p>{{/created}}</td> 
+                                <td> <a href="/anuncio/{{slug}}/id/{{_id}}" target="blank"> <img src="/media/{{photos.0}}" alt="Imagem do Anúncio" class="img-thumbnail img-thumb" ></a></td>
+                                <td>
+                                    <a href="/anuncio/{{slug}}/id/{{_id}}" class="badge badge-light" target="blank">
+                                        <p class="h5">  
+                                            <strong>{{immobiles.typeImmobile}} em {{immobiles.adress.neighb}}, {{immobiles.adress.city}} - {{immobiles.adress.state}}</strong>
+                                        </p>
+                                    </a>    
+                                    <p class="text-left">
+                                        <strong>Por: {{author.name}}</strong><br/>
+                                        <small><strong>E-mail: </strong>{{author.email}}</small>
+                                    </p>
+                                    <p class="h5">  
+                                        <span class="badge badge-light"><strong>R$ {{immobiles.saleValue}}</strong></span>
+                                        {{#immobiles.usefulArea}}<span class="badge badge-light"><i class="fas fa-clone"></i> {{immobiles.usefulArea}}{{#immobiles.totalArea}} - {{immobiles.totalArea}}{{/immobiles.totalArea}} m²</span>{{/immobiles.usefulArea}}
+                                        {{#immobiles.bedrooms}}<span class="badge badge-light"><i class="fas fa-bed"></i> {{immobiles.bedrooms}} quarto(s)</span>{{/immobiles.bedrooms}}
+                                        {{#immobiles.bathrooms}}<span class="badge badge-light"><i class="fas fa-shower"></i> {{immobiles.bathrooms}} banheiro(s)</span>{{/immobiles.bathrooms}}
+                                        {{#immobiles.suites}}<span class="badge badge-light"><i class="fas fa-bath"></i> {{immobiles.suites}} suíte(s)</span>{{/immobiles.suites}}
+                                        {{#immobiles.vacancy}}<span class="badge badge-light"><i class="fas fa-car"></i> {{immobiles.vacancy}} vagas(s)</span>{{/immobiles.vacancy}}
+                                        {{#immobiles.floor}}<span class="badge badge-light"><i class="fas fa-building"></i> {{immobiles.floor}} andar</span>{{/immobiles.floor}}
+                                        
+                                    </p>
+                                    <p class="h5">  
+                                        <a href="/adadmin/{{_id}}/pause" class="badge badge-dark link-pause  pause  {{classNone}}"><span><i class="fas fa-pause"></i> Pausar</span></a>
+                                        <a href="/adadmin/{{_id}}/starting" class="badge badge-info link-play play {{class}}"><span><i class="fas fa-play"></i> Despausar</span></a>   
+                                        <a href="/adadmin/{{_id}}/delete" class="badge badge-danger"><span><i class="fas fa-trash"></i> Excluir</span></a>   
+                                        <a  href="/generatepdf/{{slug}}/id/{{_id}}" class="badge badge-light" target="blank">Imprimir <i class="fas fa-print"></i></a>
+                                    </p>
+                                </td>
+                                <td><span class="badge badge-pill badge-status {{classColor}}">{{status}}</span></td>
+                        
+                               
+                            </tr>
+                            {{/ads}}
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
+
+{{>footer}}
+<script>
+	$(function() {
+		$('#table_ads').DataTable();
+	});
+	$("#table_ads").dataTable({
+		"bJQueryUI": true,
+		"oLanguage": {
+			"sProcessing": "Processando...",
+			"sLengthMenu": "Mostrar _MENU_ registros",
+			"sZeroRecords": "Nenhum resgitro foi encontrado",
+			"sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+			"sInfoEmpty": "Mostrando de 0 até 0 de 0 registros",
+			"sInfoFiltered": "",
+			"sInfoPostFix": "",
+			"sSearch": "Buscar:",
+			"sUrl": "",
+			"oPaginate": {
+				"sFirst": "Primeiro",
+				"sPrevious": "Anterior",
+				"sNext": "Seguinte",
+				"sLast": "Último"
+			}
+		}
+	});
+</script>
+
+
+
+
+</body>
+</html>

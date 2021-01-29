@@ -1,0 +1,289 @@
+const express = require('express');
+const homeController = require('../controllers/homeController');
+
+const userController = require('../controllers/userController');
+const adController = require('../controllers/adController');
+const authMiddleware = require('../middlewares/authMiddleware');
+const dashboardController = require('../controllers/dashboardController');
+const adcategoryController = require('../controllers/adcategoryController');
+const categoryController = require('../controllers/categoryController');
+const typeController = require('../controllers/typeController');
+// Rotas 
+const router = express.Router();
+//Index
+router.get('/', homeController.index);
+
+router.get('/generatepdf/:slug/id/:_id', 
+    adController.generatepdf
+); 
+
+//Usúario
+// Login
+router.get('/users/login',
+    userController.login
+);
+router.post('/users/login', 
+    userController.loginAction
+);
+router.get('/users/logout', 
+    userController.logout
+);
+router.get('/users/logout', 
+    userController.logout
+);
+router.get('/auth/google', 
+    userController.loginGoogle
+);
+router.get('/auth/google/callback', 
+    userController.googleAction
+);
+router.get('/auth/facebook', 
+    userController.loginFacebook
+);
+router.get('/auth/facebook/callback', 
+    userController.facebookAction
+);
+router.get('/api/current_user', 
+    userController.currentUser
+);
+// Cadastro do Usúario
+router.get('/users/register', 
+    userController.register
+);
+router.post('/users/register', 
+    userController.registerAction
+);
+// Atualizar Dados do Usúario
+router.get('/perfil', 
+    authMiddleware.isLogged, 
+    userController.profile
+);
+router.post('/profile', 
+    authMiddleware.isLogged, 
+    userController.profileAction
+);
+router.post('/profile/address', 
+    authMiddleware.isLogged, 
+    userController.addAddress
+);
+// Atualizar senha
+router.post('/profile/password', 
+    authMiddleware.isLogged, 
+    authMiddleware.changePassword
+);
+// Esqueceu senha
+router.get('/users/forget', 
+    userController.forget
+);
+router.post('/users/forget', 
+    userController.forgetAction
+);
+router.get('/users/reset/:token', 
+    userController.forgetToken
+);
+router.post('/users/reset/:token', 
+    userController.forgetTokenAction
+);
+//Anúncio
+router.get('/categorysjax',
+    authMiddleware.isLogged,
+    categoryController.categorysjax
+);
+router.get('/categoryscommercialajax',
+    authMiddleware.isLogged,
+    categoryController.categoryscommercialajax
+);
+router.get('/categorysresidentialajax',
+    authMiddleware.isLogged,
+    categoryController.categorysresidentialajax
+);
+router.get('/anunciar',
+    authMiddleware.isLoggedAdd,
+    authMiddleware.verification,
+    adController.add
+);
+router.post('/anunciar', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.verification,
+    adController.uploadImages,
+    adController.resizeImages,
+    adController.addAction
+); 
+router.get('/ad/:_id/edit', 
+    authMiddleware.isLogged,
+    authMiddleware.verification,
+    adController.edit
+);
+router.post('/ad/:_id/edit', 
+    authMiddleware.isLogged,
+    authMiddleware.verification,
+    adController.uploadImages,
+    authMiddleware.verification,
+    adController.resizeImages,
+    adController.editAction
+);
+router.get('/ad/:_id/pause', 
+    authMiddleware.isLogged,
+    authMiddleware.verification,
+    adController.pauseAction
+);
+router.get('/ad/:_id/starting', 
+    authMiddleware.isLogged,
+    authMiddleware.verification,
+    adController.startingAction
+);
+router.get('/ad/:_id/delete', 
+    authMiddleware.isLogged,
+    authMiddleware.verification,
+    adController.deleteAction
+); 
+router.get('/meusanuncios',
+    authMiddleware.isLogged,
+    authMiddleware.verification,
+    adController.myads
+);
+router.post('/meusanuncios', 
+    authMiddleware.isLogged,
+    authMiddleware.verification,
+    adController.filtermyadsdates
+);
+router.get('/anuncio/:slug/id/:_id', 
+    adController.view
+); 
+// Rota para busca atráves de categoria
+router.get('/buscar', 
+    adcategoryController.category
+);
+router.get('/estado', 
+    adcategoryController.state
+);
+router.get('/buscarTitulo', 
+    adcategoryController.category
+);
+router.post('/buscar',
+    adcategoryController.search
+ );
+ router.post('/buscarTitulo',
+    adcategoryController.searchTitleAction
+ );
+ router.get('/autocomplete/',adcategoryController.searchTitle);
+// Rotas Admin
+
+router.get('/dashboard', 
+    authMiddleware.isLoggedAdmin, 
+    dashboardController.dashboard
+);
+router.get('/adadmin/:_id/pause', 
+    authMiddleware.isLoggedAdmin,
+    dashboardController.pauseAction
+);
+router.get('/adadmin/:_id/starting', 
+    authMiddleware.isLoggedAdmin, 
+    dashboardController.startingAction
+);
+router.get('/adadmin/:_id/delete', 
+    authMiddleware.isLoggedAdmin, 
+    dashboardController.deleteAction
+);
+
+router.get('/graphicajax',
+    authMiddleware.isLoggedAdmin, 
+    dashboardController.graphicajax
+);
+
+router.get('/graphicastatusjax',
+    authMiddleware.isLoggedAdmin, 
+    dashboardController.graphicastatusjax
+);
+router.get('/adminCategorias',
+    authMiddleware.isLoggedAdmin,
+    categoryController.categorys
+);
+router.get('/adminCategorias/adicionarCategorias',
+   authMiddleware.isLoggedAdd,
+   authMiddleware.isLoggedAdmin,
+   categoryController.add
+);
+router.post('/adminCategorias/adicionarCategorias', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    categoryController.addAction
+); 
+router.get('/typejax',
+    typeController.typejax
+);
+router.get('/adminTipo',
+    authMiddleware.isLoggedAdmin,
+    typeController.types
+);
+router.get('/adminTipo/adicionarTipo',
+   authMiddleware.isLoggedAdd,
+   authMiddleware.isLoggedAdmin,
+   typeController.add
+);
+router.post('/adminTipo/adicionarTipo',
+   authMiddleware.isLoggedAdd,
+   authMiddleware.isLoggedAdmin,
+   typeController.addAction
+);
+router.get('/adminTipo/:_id/edit',
+   authMiddleware.isLoggedAdd,
+   authMiddleware.isLoggedAdmin,
+   typeController.edit
+);
+router.post('/adminTipo/:_id/edit', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    typeController.editAction
+);
+router.get('/adminTipo/:_id/delete', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    typeController.delete
+);
+router.get('/adminCategorias/:_id/edit',
+   authMiddleware.isLoggedAdd,
+   authMiddleware.isLoggedAdmin,
+   categoryController.edit
+);
+router.post('/adminCategorias/:_id/edit', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    categoryController.editAction
+);
+router.get('/adminCategorys/:_id/delete', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    categoryController.delete
+);
+router.get('/usuarios', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    userController.usersList
+);   
+router.get('/anuncios', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    adController.ads
+); 
+router.post('/anuncios', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    adController.filterdates
+);
+router.get('/users/:_id/deactivate', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    userController.deactivateAction
+);
+router.get('/users/:_id/activate', 
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin,
+    userController.activateAction
+);
+router.get('/viewuser/:_id',  
+    authMiddleware.isLoggedAdd,
+    authMiddleware.isLoggedAdmin, 
+    dashboardController.viewuser
+);   
+module.exports = router;

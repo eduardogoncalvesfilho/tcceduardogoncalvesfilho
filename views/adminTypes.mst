@@ -1,0 +1,82 @@
+{{>header}}
+ <link rel="stylesheet" href="/assets/css/form.css"/>
+ <link rel="stylesheet" href="/assets/css/style.css"/>
+<div class="container container2">
+        <div class="row">
+            <div class="col-9 p-3">
+                <h3>Tipos de Anúncios</h3>
+            </div>
+            <div class="col-3 p-3">
+                <div class="d-flex justify-content-end">
+                    <a href="/adminTipo/adicionarTipo" class="btn btn-primary text-uppercase">Adicionar</a>
+                </div> 
+            </div>
+
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table text" id="table_type">
+                        <thead>
+                            <tr class="h5">
+                            <th>Tipo</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#type}}
+                            <tr>
+                                <td>
+                                <p class="h5">  
+                                    <strong>{{name}}</strong>
+                                </p>    
+
+                                </td>
+        
+                                <td class="h5 text-center"><span class="badge badge-pill badge-status {{classColor}}">{{status}}</span></td>
+                                <td>
+                                    <p class="h5 text-center">  
+                                        <a href="adminTipo/{{_id}}/edit" class="badge badge-primary"><span><i class="fas fa-edit"></i> Editar</span></a>    
+                                        <a href="adminTipo/{{_id}}/delete" class="badge badge-danger"><span><i class="fas fa-trash"></i> Excluir</span></a>   
+                                    </p>                                
+                                </td>
+                            </tr>
+                            {{/type}}
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div> 
+
+{{>footer}}
+<script>
+	$(function() {
+		$('#table_type').DataTable();
+	});
+	$("#table_type").dataTable({
+		"bJQueryUI": true,
+		"oLanguage": {
+			"sProcessing": "Processando...",
+			"sLengthMenu": "Mostrar _MENU_ registros",
+			"sZeroRecords": "Não foi encontrado nenhuma tipo cadastrado",
+			"sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+			"sInfoEmpty": "Mostrando de 0 até 0 de 0 registros",
+			"sInfoFiltered": "",
+			"sInfoPostFix": "",
+			"sSearch": "Buscar:",
+			"sUrl": "",
+			"oPaginate": {
+				"sFirst": "Primeiro",
+				"sPrevious": "Anterior",
+				"sNext": "Seguinte",
+				"sLast": "Último"
+			}
+		}
+	});
+</script>      
+
+
+
+</body>
+</html>

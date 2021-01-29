@@ -1,0 +1,338 @@
+{{>header}}
+<link href ="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel = "stylesheet">
+<link rel="stylesheet" href="/assets/css/ad.css"/>
+<link rel="stylesheet" href="/assets/css/form.css"/>
+<link rel="stylesheet" href="/assets/css/print.css"/>
+<div class="container">
+    <div class="carousel-container position-relative row">
+        <div class=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <nav aria-label="breadcrumb  ">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">{{ads.rentAndSale}}</a></li>
+                <li class="breadcrumb-item"><a href="#">{{ads.immobiles.typeImmobile}}</a></li>
+                <li class="breadcrumb-item"><a href="#">{{ads.type}}</a></li>
+                <li class="breadcrumb-item"><a href="#">{{ads.immobiles.adress.city}} - {{ads.immobiles.adress.state}}</a></li>
+              </ol>
+            </nav>
+            <h4 class="h4 font-weight-bold">{{ads.immobiles.typeImmobile}} em {{ads.immobiles.adress.neighb}}, {{ads.immobiles.adress.city}} - {{ads.immobiles.adress.state}}</h4>
+             <i><small>Publicado {{ads.date}}</small></i> 
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8  mb-5">
+            
+            <div id="myCarousel" class="carousel card-slide slide box-shodow" data-ride="carousel">
+                <div class="carousel-inner">
+                                {{#ads.photos.0}}
+                                    <div class="carousel-item active" data-slide-number="0">
+                                        <img src="/media/{{ads.photos.0}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.0}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                    </div>
+                                {{/ads.photos.0}}    
+                                {{#ads.photos.1}}
+                                    <div class="carousel-item" data-slide-number="1">
+                                        <img src="/media/{{ads.photos.1}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.1}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                    </div>
+                                {{/ads.photos.1}} 
+                                {{#ads.photos.2}}
+                                    <div class="carousel-item" data-slide-number="2">
+                                        <img src="/media/{{ads.photos.2}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.2}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                    </div>
+                                {{/ads.photos.2}}                                
+                                {{#ads.photos.3}}
+                                    <div class="carousel-item" data-slide-number="3">
+                                        <img src="/media/{{ads.photos.3}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.3}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                    </div>
+                                {{/ads.photos.3}}                                
+                                {{#ads.photos.4}}
+                                    <div class="carousel-item" data-slide-number="4">
+                                        <img src="/media/{{ads.photos.4}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.4}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                    </div>
+                                {{/ads.photos.4}}                                
+                                {{#ads.photos.5}}
+                                <div class="carousel-item" data-slide-number="5">
+                                    <img src="/media/{{ads.photos.5}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.5}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                </div>
+                                {{/ads.photos.5}}                                
+                                {{#ads.photos.6}}
+                                <div class="carousel-item" data-slide-number="6">
+                                    <img src="/media/{{ads.photos.6}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.6}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                </div>
+                                {{/ads.photos.6}}                                
+                                {{#ads.photos.7}}
+                                    <div class="carousel-item" data-slide-number="7">
+                                        <img src="/media/{{ads.photos.7}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.7}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                    </div>
+                                {{/ads.photos.7}} 
+                                {{#ads.photos.8}}
+                                    <div class="carousel-item" data-slide-number="8">
+                                        <img src="/media/{{ads.photos.8}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.8}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                    </div>
+                                {{/ads.photos.8}}   
+                                {{#ads.photos.9}}
+                                    <div class="carousel-item" data-slide-number="9">
+                                        <img src="/media/{{ads.photos.9}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.9}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                    </div>
+                                {{/ads.photos.9}}
+                                {{#ads.photos.10}}
+                                <div class="carousel-item" data-slide-number="10">
+                                    <img src="/media/{{ads.photos.10}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.10}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                </div>
+                                {{/ads.photos.10}}                                
+                                {{#ads.photos.11}}
+                                    <div class="carousel-item" data-slide-number="11">
+                                        <img src="/media/{{ads.photos.11}}" class="d-block w-100" alt="..." data-remote="/media/{{ads.photos.11}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery"  height="510">
+                                    </div>
+                                {{/ads.photos.11}}                                                                                                                                                                           
+                </div><!-- carousel-inner -->
+                <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row mx-0">
+                                {{#ads.photos.0}}
+                                    <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0" >
+                                      <img src="/media/{{ads.photos.0}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.0}}                              
+                                {{#ads.photos.1}}
+                                    <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="1" >
+                                      <img src="/media/{{ads.photos.1}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.1}}
+                                {{#ads.photos.2}}
+                                    <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="2" >
+                                      <img src="/media/{{ads.photos.2}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.2}}                                
+                                {{#ads.photos.3}}
+                                    <div id="carousel-selector-3" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="3" >
+                                      <img src="/media/{{ads.photos.3}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.3}}                                
+                                {{#ads.photos.4}}
+                                    <div id="carousel-selector-4" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="4" >
+                                      <img src="/media/{{ads.photos.4}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.4}}                                
+                                {{#ads.photos.5}}
+                                    <div id="carousel-selector-5" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="5" >
+                                      <img src="/media/{{ads.photos.5}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.5}}                                
+                                                            
+                            </div><!-- row mx-0 -->      
+                        </div><!-- carousel-item active --> 
+                         {{#ads.photos.6}}
+                        <div class="carousel-item">
+                            <div class="row mx-0">
+                                {{#ads.photos.6}}
+                                    <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="6" >
+                                      <img src="/media/{{ads.photos.6}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.6}}                                
+                                {{#ads.photos.7}}
+                                    <div id="carousel-selector-7" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="7" >
+                                      <img src="/media/{{ads.photos.7}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.7}} 
+                                {{#ads.photos.8}}
+                                    <div id="carousel-selector-8" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="8" >
+                                      <img src="/media/{{ads.photos.8}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.8}}   
+                                {{#ads.photos.9}}
+                                    <div id="carousel-selector-9" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="9" >
+                                      <img src="/media/{{ads.photos.9}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.9}}
+                                {{#ads.photos.10}}
+                                    <div id="carousel-selector-10" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="10" >
+                                      <img src="/media/{{ads.photos.10}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.10}}                                
+                                {{#ads.photos.11}}
+                                    <div id="carousel-selector-11" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="11" >
+                                      <img src="/media/{{ads.photos.11}}" class="img-fluid img-thumb" alt="...">
+                                    </div>
+                                {{/ads.photos.11}}                          
+                            </div><!-- row mx-0 -->      
+                        </div><!-- carousel-item -->
+                         {{/ads.photos.6}}
+                        
+                    </div><!-- carousel-inner -->
+                    <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                </div><!-- carousel-thumbs -->
+                <br/>  
+            </div><!-- myCarousel -->    
+        </div><!-- col do myCarousel -->
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-5">
+            <div class="card box-shodow card-body-info">
+                <div class="card-body">    
+                    <table class="table table-borderless table-margin-bottom" id="table-price">
+                        <tbody>
+                            {{#ads.immobiles.saleValue}}
+                             <tr>  
+                               <td>  {{#ads.codeRef}} <span class="badge badge-dark">Ref. {{ads.codeRef}}</span>{{/ads.codeRef}}</td>    
+                            </tr>
+                            <tr>  
+                              <td id="title-sale" class="h3 text-center"><strong>R$ {{ads.immobiles.saleValue}}</strong> <small>{{ads.addMes}}</small><hr/></td>
+                            </tr>
+                            {{/ads.immobiles.saleValue}}   
+                            <tr class="{{ads.class}}">
+                              <td id="title-condominium"><strong>Condomínio:</strong><font class="text-dark font-weight-bold">  R$ {{ads.immobiles.condominiumValue}}</font></td>
+                            </tr>
+                            <tr  class="{{ads.classNone}}">  
+                              <td id="title-iptu"><strong>IPTU:</strong><font class="text-dark font-weight-bold"> R$ {{ads.immobiles.iptuValue}}</font><hr/></td>
+                            </tr>
+                                               
+                        </tbody>
+                    </table>       
+                    <table class="table  table-borderless  table-margin-bottom" id="table-itens">
+
+                        <tbody class="text-center">
+                            <tr>
+                                <td>
+                                    <p class="h5">  
+                                        {{#ads.immobiles.usefulArea}}<span class="badge badge-light"><i class="fas fa-clone"></i> {{ads.immobiles.usefulArea}}{{#ads.immobiles.totalArea}} - {{ads.immobiles.totalArea}}{{/ads.immobiles.totalArea}} m²</span>{{/ads.immobiles.usefulArea}}
+                                        {{#ads.immobiles.bedrooms}}<span class="badge badge-light"><i class="fas fa-bed"></i> {{ads.immobiles.bedrooms}} quarto(s)</span>{{/ads.immobiles.bedrooms}}
+                                        {{#ads.immobiles.bathrooms}}<span class="badge badge-light"><i class="fas fa-shower"></i> {{ads.immobiles.bathrooms}} banheiro(s)</span>{{/ads.immobiles.bathrooms}}
+                                        {{#ads.immobiles.suites}}<span class="badge badge-light"><i class="fas fa-bath"></i> {{ads.immobiles.suites}} suíte(s)</span>{{/ads.immobiles.suites}}
+                                        {{#ads.immobiles.vacancy}}<span class="badge badge-light"><i class="fas fa-car"></i> {{ads.immobiles.vacancy}} suíte(s)</span>{{/ads.immobiles.vacancy}}
+                                        {{#ads.immobiles.floor}}<span class="badge badge-light"><i class="fas fa-building"></i> {{ads.immobiles.floor}} suíte(s)</span>{{/ads.immobiles.floor}}
+
+                                    </p>    
+                                </td>
+                            </tr>
+                      </tbody>
+                  </table>  
+                    <h5><strong>Endereço</strong></h5>
+                             <input type="hidden" id="txtEndereco" name="txtEndereco" 
+                                value="{{#ads.immobiles.adress}} {{ads.immobiles.adress.street}}, {{ads.immobiles.adress.number}} - {{ads.immobiles.adress.neighb}}, {{ads.immobiles.adress.city}} - {{ads.immobiles.adress.state}}, {{ads.immobiles.adress.zipCode}} {{/ads.immobiles.adress}}"/>
+                        <p>      
+                           {{#ads.immobiles.adress}}
+                                    
+                                    {{ads.immobiles.adress.street}},
+                                    {{ads.immobiles.adress.number}} -
+                                    {{ads.immobiles.adress.neighb}},
+
+                                    {{ads.immobiles.adress.city}} - {{ads.immobiles.adress.state}}, 
+                                    {{ads.immobiles.adress.zipCode}} <span><i class="fas fa-map-marker-alt"></i></span>
+                            {{/ads.immobiles.adress}}
+                        </p> 
+                        <p>
+                            {{#ads.immobiles.adress}}
+                                {{#ads.immobiles.adress.complement}}<strong>Complemento.:</strong> {{ads.immobiles.adress.complement}}<br/>{{/ads.immobiles.adress.complement}}   
+                                {{#ads.immobiles.adress.referencePoint}}<strong> Ponto de Ref.:</strong> {{ads.immobiles.adress.referencePoint}}{{/ads.immobiles.adress.referencePoint}}
+                            {{/ads.immobiles.adress}}   
+                        </p>
+                         <p>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLongoExemplo">Contate o anunciante</button>
+                        </div> 
+                        </p>
+                         <p>
+                         <div class="d-flex justify-content-center">
+                            <a  href="/generatepdf/{{ads.slug}}/id/{{ads._id}}/" class="btn btn-outline-dark" target="blank">Imprimir <i class="fas fa-print"></i></a>
+                        </div> 
+                       
+                        </p>                      
+                </div>
+            </div>
+
+                   
+        </div>
+
+       <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-5">
+            <div class="card box-shodow">
+                <div class="card-body">
+                    <h5><strong>Descrição</strong></h5>
+                    <p class="text-justify align-baseline">{{ads.description}}</p> 
+                </div>
+            </div>  
+             
+        </div>
+       
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 mb-5">
+            <div class="card box-shodow">
+                <div class="card-body" >
+                    <div id="mapa" style="height: 500px; width: 100%">
+                    
+                        <input type="hidden" id="txtLatitude" name="txtLatitude" />
+                        <input type="hidden" id="txtLongitude" name="txtLongitude" />    
+                    </div>
+                    <div class="d-flex justify-content-end">
+                         <i class="text-danger"><small>As informações da Localização é baseado no cadastro do endereço do anúncio.</small></i>
+                    </div> 
+                     <div class="card-footer text-center">   
+                            <h5>Você ficou com alguma dúvida sobre a localização desse imóvel?</h5>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLongoExemplo">Contate o anunciante</button>
+                        </div>
+                    </div>
+                </div>           
+            </div>
+        </div>
+            
+
+      
+    </div><!-- row -->
+    <!-- Modal -->
+    <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalLongoExemplo">Contate o anunciante</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-signin needs-validation" novalidate autocomplete="off"   method="POST">
+                        <div class="form-label-group">
+                            <input type="text" id="inputName" class="form-control" placeholder="Nome" name="username" disabled autofocus value="{{ads.author.name}}">
+                            <label for="inputName">Nome</label>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="cel" id="phone" class="form-control phone" placeholder="Telefone" minlength="14" maxlength="15" name="phone" disabled value="{{ads.author.phone}}">
+                            <label for="phone">Telefone</label>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="email" id="email" class="form-control email" placeholder="E-mail"  name="email" disabled value="{{ads.author.email}}">
+                            <label for="email">E-mail</label>
+                        </div>
+                        <h5>Informe o código de Referência.</h5>
+                        <div class="form-label-group">
+                            <input type="text" id="codeRef" class="form-control" placeholder="Ref. " disabled value="{{ads.codeRef}}">
+                            <label for="codeRef">Ref.</label>
+                        </div>
+                  </form>      
+                </div>
+            </div>
+        </div>
+    </div>         
+</div><!-- container --> 
+{{>footer}}
+<script src="/assets/js/carousel.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAufoEDY8ZYQyRn6ZdB6TAxuVXVLzVFJPI"></script>
+<script src="/assets/js/jquery-ui.min.js"></script>
+<script src="/assets/js/map.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<script src="/assets/js/print.js"></script>
+	<script>
+		$(document).on("click", '[data-toggle="lightbox"]', function(event) {
+		  event.preventDefault();
+		  $(this).ekkoLightbox();
+});
+</script>
+
+
+
+</body>
+</html>

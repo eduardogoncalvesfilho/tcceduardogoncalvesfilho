@@ -1,0 +1,53 @@
+{{>header}}
+ <link rel="stylesheet" href="/assets/css/form.css"/>
+<div class="container container2">
+    <div class="wrapper">
+        <div id="formContent">          
+            <form method="post" class="form-signin needs-validation" novalidate autocomplete="off">
+                <div class="d-flex justify-content-end">
+                    <i class="text-danger"><small>As informações com (*) são obrigatórias</small></i>
+                </div>
+                <div class="d-flex justify-content-left">
+                    <h4>Editar tipo:</h4>
+                </div> 
+                <div class="d-flex justify-content-left">
+                    <strong>Nome do Tipo:</strong>
+                </div> 
+                <div class="form-label-group">
+                    <input type="text"   name="name" id="type" class="form-control"  placeholder="Nome *" alt="Tipo" required="" value="{{type.name}}">
+                    <label for="type">Nome *</label>
+                        <div class="invalid-feedback">
+                            Campo Nome é obrigatório!.
+                        </div>
+                </div>
+               
+                <div class="d-flex justify-content-left">
+                    <strong>Status:</strong>
+                </div> 
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">                      
+                    <label class="btn btn-outline-success btn-size-ads active {{type.classactiveStatusOn}}">
+                        <input type="radio" name="status" value="Ativo" autocomplete="off" {{type.classcheckedStatusOff}}> Ativo
+                    </label>
+                    <label class="btn btn-outline-danger btn-size-ads {{type.classactiveStatusOff}}">
+                        <input type="radio" name="status" value="Desativado" autocomplete="off" {{type.classcheckedStatusOn}}> Desativado
+                    </label>
+                   
+                </div>
+               
+                    <div class="d-flex justify-content-end mt-3">
+                        <a href="/adminTipo" class="btn text-uppercase btn-return">Voltar</a>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase btn-save" type="submit">Salvar</button>
+                    </div> 
+                     
+            </form>
+        </div>
+    </div>
+</div>
+
+{{>footer}}
+<script src="/assets/js/form.js"></script>
+
+
+
+</body>
+</html>

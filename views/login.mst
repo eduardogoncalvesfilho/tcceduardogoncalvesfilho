@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="description" content="The small framework with powerful features">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Minha Conta</title>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/assets/css/login.css"/>
+        <script src="https://kit.fontawesome.com/e79c2b9af8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+         <a href="/">
+                <div class="logo">
+				         <img src="/assets/images/logo.png" id="icon" alt="User Icon" />
+			        </div>
+          </a>
+          <div class="card-body">
+            <h5 class="card-title text-center">Acesse a sua conta</h5>
+            <form class="form-signin needs-validation" novalidate method="POST">
+                        {{#flashes}}
+                        {{#success}}
+                            <div class="warning alert alert-success">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            {{.}}
+                            </div>
+                        {{/success}}
+                        {{#error}}
+                        <div class="warning alert alert-danger">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            {{.}}
+                            </div>
+                        {{/error}}
+                        {{#info}}
+                        <div class="warning alert alert-info">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            {{.}}
+                            </div>
+                        {{/info}}
+                {{/flashes}} 
+              <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required autofocus>
+                  <label for="inputEmail">E-mail</label>
+                  <div class="invalid-feedback">
+                      Informe seu e-mail!
+                  </div>  
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Senha" required>
+                 <label for="inputPassword">Senha</label>
+                  <div class="invalid-feedback">
+                      Informe sua senha!
+                  </div>                   
+              </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <div class="text-center">
+                      <a class="underlineHover" href="/users/forget">Esqueceu a senha?</a> | <a class="underlineHover" href="/users/register">Cadastre-se</a>
+                  </div>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Acessar</button>
+              <hr class="my-4">
+              <a href="/auth/google" class="btn btn-lg btn-google btn-block text-uppercase"><i class="fab fa-google mr-2"></i> Acessar com o Google</a>
+              <a href="/auth/facebook" class="btn btn-lg btn-facebook btn-block text-uppercase" ><i class="fab fa-facebook-f mr-2"></i> Acessar com o Facebook</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/validator.min.js"></script>
+  <script src="/assets/js/jquery.mask.js"></script>
+  <script src="/assets/js/validator-form.js"></script>
+  <script src="/assets/js/address.js"></script>
+  <script src="/assets/js/mask.js"></script>
+
+
+</body>
+</html>

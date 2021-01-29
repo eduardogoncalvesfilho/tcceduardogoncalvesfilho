@@ -1,0 +1,115 @@
+
+.card-body-info{
+  min-height: 540px;
+}
+.table-margin-bottom{
+  margin-bottom: 0px !important;
+  
+}
+.carousel {
+    position: relative;
+  }
+  .card-slide{
+    border: 1px solid #ccccce;
+    border-radius: 3px;
+    padding: 3px;
+
+  }
+  .d-block{
+    cursor: pointer;
+  }
+  .box-shodow{
+    -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.3);
+  }
+  .carousel-item img {
+    object-fit: cover;
+  }
+  #carousel-thumbs {
+    background: rgba(255,255,255,.3);
+    bottom: 0;
+    left: 0;
+    padding: 0 50px;
+    right: 0;
+  }
+  #carousel-thumbs img {
+    border: 5px solid transparent;
+    cursor: pointer;
+  
+  }
+  .thumb{
+   min-height:140px !important;
+   max-height:140px !important;
+  }
+  .img-thumb{
+    max-height: 100px !important;
+    min-height: 100px !important;
+    min-width: 100px !important;
+  }
+  #carousel-thumbs img:hover {
+    border-color: rgba(255,255,255,.3);
+  }
+  #carousel-thumbs .selected img {
+    border-color: #fff;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+  }
+  @media all and (max-width: 767px) {
+    .carousel-container #carousel-thumbs img {
+      border-width: 3px;
+    }
+  }
+  @media all and (min-width: 576px) {
+    .carousel-container #carousel-thumbs {
+      position: absolute;
+    }
+  }
+  @media all and (max-width: 576px) {
+    .carousel-container #carousel-thumbs {
+      background: #ccccce;
+    }
+  }
+
+  .font-sale{
+    font-size: 26px;
+  }
+  #title-sale{
+    font-size: 28px;
+    font-weight: inherit;
+   
+  }
+  #title-condominium{
+    padding:0 !important;
+  }
+  #title-iptu{
+    padding:0 !important;
+  }
+  .div-margin-bottom{
+    margin-bottom: 50px !important;
+    padding: 10px;
+  }
+  .breadcrumb{
+    background-color: #fff !important;
+  
+    
+  }
+  .breadcrumb-item a{
+    font-weight: 600 !important;
+    color: #339BAA;
+    font-size: 16px;
+    
+  }
+  .breadcrumb-item a:hover{
+    text-decoration: none;
+    color: #000000;
+   
+  }
+
+  #title-sale{
+    padding:0;
+  }
+.div-clear{
+  clear: both !important;
+}

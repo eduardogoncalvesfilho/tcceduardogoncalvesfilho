@@ -1,0 +1,86 @@
+{{>header}}
+<link rel="stylesheet" href="/assets/css/print.css"/>
+<div class="container container2" id="geraPDF">
+<div class="row mt-5">
+        <div class="col-md-12 mb-5">
+                        <h4 class="no-print">Dashboard</h4>
+            <h4 class="only-print">Relatório gráfico de estatísticas</h4>
+            
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-outline-dark no-print"  onclick="print()" type="button">Imprimir <i class="fas fa-print"></i></button>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="card border-info mx-sm-1 p-3">
+                <div class="card border-info shadow text-info p-3 card-dashboard" ><span class="fas fa-users" aria-hidden="true"></span></div>
+                <div class="text-info text-center mt-3"><h4>Usuários</h4></div>
+                <div class="text-info text-center mt-2"><h1>{{countUsers}}</h1></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-warning mx-sm-1 p-3">
+                <div class="card border-warning shadow text-warning p-3 card-dashboard"><span class="fas fa-grip-horizontal" aria-hidden="true"></span></div>
+                <div class="text-warning text-center mt-3"><h4>Anúncios</h4></div>
+                <div class="text-warning text-center mt-2"><h1>{{countAds}}</h1></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-success mx-sm-1 p-3">
+                <div class="card border-success shadow text-success p-3 card-dashboard" ><span class="fas fa-check" aria-hidden="true"></span></div>
+                <div class="text-success text-center mt-3"><h4>Publicados</h4></div>
+                <div class="text-success text-center mt-2"><h1>{{countAdsActive}}</h1></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card border-danger mx-sm-1 p-3">
+                <div class="card border-danger shadow text-danger p-3 card-dashboard" ><span class="fas fa-times" aria-hidden="true"></span></div>
+                <div class="text-danger text-center mt-3"><h4>Pausados</h4></div>
+                <div class="text-danger text-center mt-2"><h1>{{countAdsDisabled}}</h1></div>
+            </div>
+        </div>
+     </div>    
+    <div class="row  mt-5">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    Anúncios publicados nos últimos 30 dias
+                </div>                
+
+                <div class="card-body" style="width:100%">
+                    <canvas id="rel1" width="100%" class="img-fluid"  height="30"></canvas>
+                </div>
+
+            </div>
+        
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    Status
+                </div>                
+
+                <div class="card-body">
+                    <canvas id="rel2"  width="100%"  height="68"></canvas>
+                </div>
+            </div>        
+        </div>
+    </div>
+
+</div>
+
+
+{{>footer}}
+<script src="/assets/js/moment.min.js"></script>
+<script src="/assets/js/Chart.min.js"></script>
+<script src="/assets/js/graphic.js"></script>
+
+
+<script>
+    
+</script>
+
+
+
+</body>
+</html>

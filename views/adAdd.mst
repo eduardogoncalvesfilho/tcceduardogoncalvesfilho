@@ -1,0 +1,280 @@
+{{>header}}
+ <link rel="stylesheet" href="/assets/css/form.css"/>
+<div class="container container2">
+    <div class="row">
+            <div class="col-12 p-3">
+                <h3>Anunciar</h3>
+            </div>
+        <div class="stepwizard">
+            <div class="stepwizard-row setup-panel">
+                <div class="stepwizard-step">
+                    <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                    <p>Descrição</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                    <p>Fotos</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Finalizar</p>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div id="formContent">          
+                <form method="post" class="form-signin needs-validation" novalidate autocomplete="off"   encType="multipart/form-data" role="form">
+
+                    <div class="setup-content" id="step-1">
+                        <div class="d-flex justify-content-end">
+                            <i class="text-danger"><small>As informações com (*) são obrigatórias</small></i>
+                        </div> 
+                        <h4>Escolha o tipo do seu anúncio:</h4>  
+                        <div class="form-label-group">
+                            <select class="custom-select form-control rentAndSale" name="rentAndSale" id="select-rentAndSale" alt="Tipo do Anúncio" required="">
+                            </select>
+                         <div class="invalid-feedback">
+                                 Escolha o tipo do anúncio!.
+                            </div> 
+                        </div>
+                        <h4>Seu imóvel é:</h4>  
+                        <div class="form-label-group">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-info btn-size-ads active">
+                                    <input type="radio" name="type" id="type-residential" value="Residencial" autocomplete="off" checked> Residencial
+                                </label>
+                                <label class="btn btn-outline-info btn-size-ads ">
+                                    <input type="radio" name="type" id="type-commercial" value="Comercial" autocomplete="off"> Comercial
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-label-group select-residential">
+                            <!-- Dados preenchidos via Ajax -->
+                            <select class="custom-select form-control residential" name="typeImmobile" id="select-residential" alt="Tipo do Imóvel" required="">
+                            </select>
+                        <div class="invalid-feedback">
+                                Escolha o tipo do seu imóvel!.
+                            </div>     
+                        </div>
+                        <h4>Onde fica seu imóvel?</h4> 
+                        <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" class="d-flex justify-content-end nav-link text-primary" target="blank">Não sei meu CEP</a>
+                    <div class="form-label-group">
+                            <input type="text" name="zipCode" id="zipCode" class="form-control zipCode cep_with_callback"  placeholder="CEP *" minlength="9" size="10" maxlength="9" required=""  autofocus>
+                            <label for="zipCode">CEP *</label>
+                            <div class="invalid-feedback">
+                                Campo CEP é obrigatório!.
+                            </div>
+                        </div>
+                        <div class="form-label-group street d-none">
+                            <input type="text"   name="street" id="street" class="form-control"  placeholder="Rua *" alt="Rua" required="" >
+                            <label for="street">Rua *</label>
+                            <div class="invalid-feedback">
+                                Campo Rua é obrigatório!.
+                            </div>    
+                        </div>
+                        <div class="form-label-group number  d-none">
+                            <input type="text"   name="number"  id="number" class="form-control" required=""  placeholder="Número *" alt="Número" >
+                            <label for="number">Número *</label>
+                            <div class="invalid-feedback">
+                                Campo Número é obrigatório!.
+                            </div>    
+                        </div>
+                        <div class="form-label-group neighb  d-none">
+                            <input type="text"   name="neighb"   id="neighb" class="form-control" placeholder="Bairro *" alt="Bairro" required="" >
+                            <label for="neighb">Bairro *</label>
+                            <div class="invalid-feedback">
+                                Campo Bairro é obrigatório!.
+                            </div>      
+                        </div>
+                        <div class="form-label-group city  d-none">
+                            <input type="text"   name="city"   id="city" class="form-control" placeholder="Cidade *" alt="Cidade" required="">
+                            <label for="city">Cidade *</label>
+                            <div class="invalid-feedback">
+                                Campo Cidade é obrigatório!.
+                            </div>   
+                        </div>
+                        <div class="form-label state d-none">
+                                <select type="text" class="form-control"  name="state"  id="state" alt="Estado" required="" >
+                                    <option value="">Selecione</option>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AP">AP</option>
+                                    <option value="AM">AM</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+                                </select>                        
+                         
+                            <div class="invalid-feedback">
+                                Estado é obrigatório!.
+                            </div>                         
+                        </div>
+                        <div class="form-label-group complement  d-none">
+                            <input type="text" name="complement"  id="complement" class="form-control" placeholder="Complemento (Opcional)"  alt="Complemento">
+                            <label for="complement">Complemento (Opcional)</label>
+                        </div>
+                        <div class="form-label-group referencePoint d-none">
+                            <input type="text" name="referencePoint" id="referencePoint" class="form-control"   placeholder="Ponto de referência (Opcional)"  alt="Ponto de referência">
+                            <label for="referencePoint">Ponto de referência (Opcional)</label>
+                        </div>
+                       
+                        <div class="row align-items-start ">
+                    <div class="col-12 col-sm-12"><h4>Dados principais do imóvel</h4></div> 
+                        <div class="col-12 col-sm-6">
+                            <div class="form-label-group">
+                                <input type="text"   name="usefulArea"  id="usefulArea" class="form-control usefulArea numberformat"    placeholder="Área útil (m²) *" alt="Área útil (m²)" required="">
+                                <label for="usefulArea">Área útil (m²) *</label>
+                                <div class="invalid-feedback">
+                                Informe o tamanho do seu imóvel!.
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="form-label-group">
+                                <input type="text"   name="totalArea"  id="totalArea" class="form-control totalArea numberformat"    placeholder="Área total (m²) (Opcional)" alt="Área total (m²)">
+                                <label for="totalArea">Área total (m²) (Opcional)</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">    
+                            <div class="form-label-group">
+                                <input type="text"   name="bedrooms"  id="bedrooms" class="form-control bedrooms numberformat"    placeholder="Quartos *" alt="Quartos">
+                                <label for="bedrooms">Quartos (Opcional)</label>
+                                <div class="invalid-feedback">
+                                Informe quantos Quartos tem seu imóvel!.
+                                </div> 
+                            </div>
+                        </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-label-group">
+                                    <input type="text"   name="bathrooms"  id="bathrooms" class="form-control bathrooms numberformat"    placeholder="Banheiros *" alt="Banheiros">
+                                    <label for="bathrooms">Banheiros (Opcional)</label>
+                                    <div class="invalid-feedback">
+                                    Informe quantos Banheiros tem seu imóvel!.
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 ">
+                                <div class="form-label-group">
+                                    <input type="text"   name="suites"  id="suites" class="form-control suites numberformat"    placeholder="Suítes (Opcional)" alt="Suítes">
+                                    <label for="suites">Suítes (Opcional)</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-label-group">
+                                    <input type="text"   name="vacancy"  id="vacancy" class="form-control vacancy numberformat"    placeholder="Vagas (Opcional)" alt="Vagas">
+                                    <label for="vacancy">Vagas (Opcional)</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-label-group">
+                                    <input type="text"   name="floor"  id="floor" class="form-control floor numberformat"    placeholder="Andar (Opcional)" alt="Andar">
+                                    <label for="floor">Andar (Opcional)</label>
+                                </div>
+                            </div>                       
+                            
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase btn-save nextBtn " type="button">Continuar</button>
+                            </div> 
+                        </div>
+                       
+                        <div class="setup-content" id="step-2">
+                            <div class="d-flex justify-content-end">
+                                <i class="text-danger"><strong>Selecione até 12 fotos</strong></i>
+                            </div> 
+                            <h4>Enviar fotos do seu imóvel:</h4>  
+                            <div class="form-label-group">
+                                    <input class="form-control" name="images"  id="input-images" type='file' accept=".jpg, .jpeg, .png" multiple required />
+                                    <div class="invalid-feedback">
+                                        Selecione pelo menos uma foto!.
+                                    </div>    
+                            </div>
+                            <div class="row align-items-start">
+                                <div class="col-sm-12">
+                                    <div class="form-label-group">
+                                        <div class="preview-images"></div>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase btn-save nextBtn " type="button">Continuar</button>
+                            </div> 
+                    
+                        </div>
+                    <div class="setup-content" id="step-3">
+                    <h4>Finalização do Seu Anúncio</h4>
+                        <div class="form-label-group">
+                            <textarea type="text" rows="5" name="description"  id="description" class="form-control" required=""  placeholder="Descrição *" alt="Descrição"></textarea>
+                            <label for="description">Descrição *</label>
+                            <div class="invalid-feedback">
+                                Campo Descrição é obrigatório!.
+                            </div>                          
+                        </div>
+                        <h4>Quanto custa o imóvel?</h4> 
+                        <div class="form-label-group">
+                            <input type="text"   name="saleValue" id="saleValue" class="form-control saleValue"  placeholder="Valor de Venda *" alt="Valor de Venda" required="">
+                            <label for="saleValue">Valor *</label>
+                            <div class="invalid-feedback">
+                                Campo Valor é obrigatório!.
+                            </div> 
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <i><strong>Condomínio isento basta informar 0,00</strong></i>
+                        </div>                
+                        <div class="form-label-group">
+                        
+                            <input type="text"   name="condominiumValue" id="condominiumValue" class="form-control condominiumValue"  placeholder="Condomínio (R$/mês) *" alt="Condomínio (R$/mês)" required="">
+                            <label for="condominiumValue">Condomínio (R$/mês) *</label>
+                            <div class="invalid-feedback">
+                                Se o Condomínio for isento basta informar 0,00!.
+                            </div>             
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <i><strong>IPTU isento basta informar 0,00</strong></i>
+                        </div>  
+                        <div class="form-label-group">
+                            <input type="text"   name="iptuValue" id="iptuValue" class="form-control iptuValue"  placeholder="IPTU (R$/ano) *" alt="IPTU (R$/ano)" required="">
+                            <label for="iptuValue">IPTU (R$/ano) *</label>
+                            <div class="invalid-feedback">
+                                Se o IPTU for isento basta informar 0,00!.
+                            </div> 
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-lg btn-success btn-block text-uppercase btn-save nextBtn " type="submit">Anunciar</button>
+                        </div>    
+                    </div>
+                </form>
+            </div>
+             </div>
+        </div>
+    </div>
+</div>
+{{>footer}}
+<script src="/assets/js/form.js"></script>
+<script src="/assets/js/validator-form.js"></script>
+<script src="/assets/js/categorys.js"></script>
+
+
+
+</body>
+</html>

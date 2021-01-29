@@ -1,0 +1,66 @@
+{{>header}}
+ <link rel="stylesheet" href="/assets/css/form.css"/>
+<div class="container container2">
+    <div class="wrapper">
+        <div id="formContent">          
+            <form method="post" class="form-signin needs-validation" novalidate autocomplete="off">
+                <div class="d-flex justify-content-end">
+                    <i class="text-danger"><small>As informações com (*) são obrigatórias</small></i>
+                </div>
+                <div class="d-flex justify-content-left">
+                    <h4>Editar categoria:</h4>
+                </div> 
+                <div class="form-label-group">
+                     <div class="d-flex justify-content-left">
+                        <strong>Listar em:</strong>
+                    </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-outline-info btn-size-ads {{category.classactiveTypeOn}}">
+                            <input type="radio" name="type" id="type-residential" value="Residencial" autocomplete="off" {{category.classcheckedTypeOff}}> Residencial
+                        </label>
+                        <label class="btn btn-outline-info btn-size-ads {{category.classactiveTypeOff}}">
+                            <input type="radio" name="type" id="type-commercial" value="Comercial" autocomplete="off" {{category.classcheckedTypeOn}}> Comercial
+                        </label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-left">
+                    <strong>Nome da Categoria:</strong>
+                </div> 
+                <div class="form-label-group">
+                    <input type="text"   name="name" id="category" class="form-control"  placeholder="Nome *" alt="Categoria" required="" value="{{category.name}}">
+                    <label for="category">Nome *</label>
+                        <div class="invalid-feedback">
+                            Campo Nome é obrigatório!.
+                        </div>
+                </div>
+               
+                <div class="d-flex justify-content-left">
+                    <strong>Status:</strong>
+                </div> 
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">                      
+                    <label class="btn btn-outline-success btn-size-ads active {{category.classactiveStatusOn}}">
+                        <input type="radio" name="status" value="Ativo" autocomplete="off" {{category.classcheckedStatusOff}}> Ativo
+                    </label>
+                    <label class="btn btn-outline-danger btn-size-ads {{category.classactiveStatusOff}}">
+                        <input type="radio" name="status" value="Desativado" autocomplete="off" {{category.classcheckedStatusOn}}> Desativado
+                    </label>
+                   
+                </div>
+               
+                    <div class="d-flex justify-content-end mt-3">
+                        <a href="/adminCategorias" class="btn text-uppercase btn-return">Voltar</a>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase btn-save" type="submit">Salvar</button>
+                    </div> 
+                     
+            </form>
+        </div>
+    </div>
+</div>
+
+{{>footer}}
+<script src="/assets/js/form.js"></script>
+
+
+
+</body>
+</html>

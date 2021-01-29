@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="description" content="The small framework with powerful features">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>{{ads.rentAndSale}} de {{ads.immobiles.typeImmobile}} em {{ads.immobiles.adress.neighb}}, {{ads.immobiles.adress.city}} - {{ads.immobiles.adress.state}}</title>
+            <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
+            <link rel="stylesheet" href="/assets/css/print.css"/>
+            <script src="https://kit.fontawesome.com/e79c2b9af8.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="container mt-5 mb-1">
+            <button class="btn btn-outline-dark no-print"  onclick="print()" type="button">Imprimir <i class="fas fa-print"></i></button>
+        </div>
+        <div class="container" id="geraPDF" class="xpto">
+                <div class="title">
+                 <i class="h5 font-weight-bold"><small>Publicado {{ads.date}}</small></i>    
+                    <h4 class="h4 font-weight-bold">{{ads.rentAndSale}} de {{ads.immobiles.typeImmobile}} em {{ads.immobiles.adress.neighb}}, {{ads.immobiles.adress.city}} - {{ads.immobiles.adress.state}}</h4>
+                </div>
+                <h5 class="h5"><strong>Anunciante:</strong> {{ads.author.name}} - <strong>Telefone:</strong> {{ads.author.phone}} - <strong>E-mail:</strong> {{ads.author.email}}</h5>
+                <div class="row">
+                    <div class="col-4">  
+                            <table class="table table-condensed">
+                               <tbody> 
+                                    <tr>
+                                        <td><strong>Valor</strong></td>
+                                        <td><strong>R$ {{ads.immobiles.saleValue}}</strong> <small>{{ads.addMes}}</small></strong></td>
+                                    </tr>
+                                    <tr class="{{ads.class}}">
+                                        <td id="title-condominium" colspan="2"><strong>Condomínio:</strong><font class="text-dark font-weight-bold">  R$ {{ads.immobiles.condominiumValue}}</font></td>
+                                    </tr>
+                                    <tr  class="{{ads.classNone}}">  
+                                        <td id="title-iptu" colspan="2"><strong>IPTU:</strong><font class="text-dark font-weight-bold"> R$ {{ads.immobiles.iptuValue}}</font></td>
+                                    </tr>                                    
+                                    <tr>
+                                        {{#ads.immobiles.usefulArea}}<td colspan="2"><i class="fas fa-clone"></i> {{ads.immobiles.usefulArea}}{{#ads.immobiles.totalArea}} - {{ads.immobiles.totalArea}}{{/ads.immobiles.totalArea}} m²</td>{{/ads.immobiles.usefulArea}}
+                                    </tr>
+                                    <tr>
+                                        {{#ads.immobiles.bedrooms}}<td colspan="2"><i class="fas fa-bed"></i> {{ads.immobiles.bedrooms}} quarto(s)</td>{{/ads.immobiles.bedrooms}}
+                                    </tr>
+                                    <tr>
+                                        {{#ads.immobiles.bathrooms}}<td colspan="2"><i class="fas fa-shower"></i> {{ads.immobiles.bathrooms}} banheiro(s)</td>{{/ads.immobiles.bathrooms}}
+                                    </tr>
+                                    <tr>
+                                        {{#ads.immobiles.suites}}<td colspan="2"><i class="fas fa-bath"></i> {{ads.immobiles.suites}} suíte(s)</td>{{/ads.immobiles.suites}}
+                                    </tr>
+                                    <tr>
+                                        {{#ads.immobiles.vacancy}}<td colspan="2"><i class="fas fa-car"></i> {{ads.immobiles.vacancy}} suíte(s)</td>{{/ads.immobiles.vacancy}}
+                                    </tr>
+                                    <tr>    
+                                        {{#ads.immobiles.floor}}<td colspan="2"><i class="fas fa-building"></i> {{ads.immobiles.floor}} suíte(s)</td>{{/ads.immobiles.floor}}
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">{{#ads.codeRef}}<strong>Ref.</strong> {{ads.codeRef}}{{/ads.codeRef}}</td>
+                                    </tr>
+                                </tbody>
+                            </table> 
+
+                        <p class="text-justify align-baseline">
+                            {{ads.description}}
+                        </p>  
+                    </div>  
+                    <div class="col-8 photos">                
+                        <div class="col-12">
+                            {{#ads.photos.0}}
+                            <div class="img">
+                                <img src="/media/{{ads.photos.0}}"  width="300" height="200">
+                            </div>    
+                            {{/ads.photos.0}}                              
+                            {{#ads.photos.1}}
+                            <div class="img">
+                                <img src="/media/{{ads.photos.1}}" width="300" height="200">
+                            </div> 
+                            {{/ads.photos.1}}
+                            {{#ads.photos.2}}
+                            <div class="img">                    
+                                <img src="/media/{{ads.photos.2}}" width="300" height="200">
+                            </div> 
+                            {{/ads.photos.2}}                                
+                            {{#ads.photos.3}}
+                            <div class="img">
+                                <img src="/media/{{ads.photos.3}}" width="300" height="200">
+                            </div> 
+                            {{/ads.photos.3}} 
+                        </div>    
+                        <div class="col-12">                                   
+                            {{#ads.photos.4}}     
+                            <div class="img">             
+                                <img src="/media/{{ads.photos.4}}" width="300" height="200">                 
+                            </div> 
+                            {{/ads.photos.4}}                                
+                            {{#ads.photos.5}} 
+                            <div class="img">                
+                                <img src="/media/{{ads.photos.5}}" width="300" height="200">                 
+                            </div> 
+                            {{/ads.photos.5}}                                
+                            {{#ads.photos.6}}  
+                            <div class="img">                
+                                <img src="/media/{{ads.photos.6}}" width="300" height="200">                
+                            </div> 
+                            {{/ads.photos.6}}   
+                        </div>    
+                        <div class="col-12">                                  
+                            {{#ads.photos.7}}
+                            <div class="img">
+                                <img src="/media/{{ads.photos.7}}" width="300" height="200">
+                            </div>     
+                            {{/ads.photos.7}} 
+                            {{#ads.photos.8}}
+                            <div class="img">
+                                <img src="/media/{{ads.photos.8}}" width="300" height="200">
+                            </div>    
+                            {{/ads.photos.8}}  
+                            {{#ads.photos.9}}
+                            <div class="img">
+                                <img src="/media/{{ads.photos.9}}" width="300" height="200">
+                            </div>    
+                            {{/ads.photos.9}}                      
+                            {{#ads.photos.10}}
+                            <div class="img">
+                                <img src="/media/{{ads.photos.10}}" width="300" height="200">
+                            </div>    
+                            {{/ads.photos.10}}  
+                            {{#ads.photos.11}}
+                            <div class="img">
+                                <img src="/media/{{ads.photos.11}}" width="300" height="200">
+                            </div>    
+                            {{/ads.photos.11}}   
+                        </div>
+          
+                    </div> 
+                    <div class="col-2"></div> 
+                    <div class="col-8">
+                        <p>      
+                            {{#ads.immobiles.adress}}
+                                        
+                                        {{ads.immobiles.adress.street}},
+                                        {{ads.immobiles.adress.number}} -
+                                        {{ads.immobiles.adress.neighb}},
+
+                                        {{ads.immobiles.adress.city}} - {{ads.immobiles.adress.state}}, 
+                                        {{ads.immobiles.adress.zipCode}} <span><i class="fas fa-map-marker-alt"></i></span>
+                                {{/ads.immobiles.adress}}
+                        </p> 
+                    </div>
+                    <div class="col-2"></div>                                                          
+                </div>
+            </div>
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/jquery.dataTables.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/validator.min.js"></script>
+        <script src="/assets/js/popper.min.js"></script>
+        <script src="/assets/js/jquery.mask.js"></script>
+        <script src="/assets/js/address.js"></script>
+        <script src="/assets/js/mask.js"></script>
+        <script src="https://kit.fontawesome.com/e79c2b9af8.js" crossorigin="anonymous"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+        <script src="/assets/js/print.js"></script>
+    </body>
+</html>
+
+
+

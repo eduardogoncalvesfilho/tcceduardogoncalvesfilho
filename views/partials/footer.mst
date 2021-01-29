@@ -1,0 +1,16 @@
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.dataTables.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/validator.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/jquery.mask.js"></script>
+<script src="/assets/js/address.js"></script>
+<script src="/assets/js/mask.js"></script>
+<script src="https://kit.fontawesome.com/e79c2b9af8.js" crossorigin="anonymous"></script>   
+<footer class="navbar navbar-fixed-bottom bg-dark">
+
+
+ 
+      <div class=" text-white">© Classified. Rua dos Negócios, 01, Centro - 38776-000 - Belo Horizonte, MG</div>
+</footer>

@@ -1,0 +1,83 @@
+{{>header}}
+ <link rel="stylesheet" href="/assets/css/form.css"/>
+ <link rel="stylesheet" href="/assets/css/style.css"/>
+<div class="container">
+        <div class="row">
+            <div class="col-12 p-2">
+                <h3>Usuários</h3>
+            </div>
+
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table text-left" id="table_users">
+                        <thead>
+                            <tr class="h5">
+                                <th>Usuário</th>
+                                <th>E-mail</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#users}}
+                            <tr>
+                                <td>
+                                <p class="h5">  
+                                    <a href="/viewuser/{{_id}}" class="link-item text-body" ><strong>{{username}}</strong></a>
+                                </p>    
+                                </td>
+                                <td>
+                                <p class="h5">  
+                                    <a href="/viewuser/{{_id}}" class="link-item text-body"><strong>{{email}}</strong></a>
+                                </p>    
+                                </td>
+                                <td class="h5 text-center"><span class="badge badge-pill badge-status {{classColor}}">{{status}}</span></td>
+                                <td>
+                                    <p class="h5 text-center">  
+                                        <a href="/users/{{_id}}/deactivate" class="badge badge-danger link-deactivate  deactivate {{classNone}} "><span><i class="fas fa-user-slash"></i> Desativar</span></a>
+                                        <a href="/users/{{_id}}/activate" class="badge badge-success link-activate activate {{class}}"><span><i class="fas fa-user-check"></i> Ativar</span></a>   
+                                    </p>
+                                 </td> 
+                            </tr>
+                            {{/users}}
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div> 
+<div class="div-margin-bottom"></div>
+<div class="div-margin-bottom"></div>
+<div class="div-margin-bottom"></div>
+{{>footer}}
+<script>
+	$(function() {
+		$('#table_users').DataTable();
+	});
+	$("#table_users").dataTable({
+		"bJQueryUI": true,
+		"oLanguage": {
+			"sProcessing": "Processando...",
+			"sLengthMenu": "Mostrar _MENU_ registros",
+			"sZeroRecords": "Não foi encontrado nenhum usuário cadastrado",
+			"sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+			"sInfoEmpty": "Mostrando de 0 até 0 de 0 registros",
+			"sInfoFiltered": "",
+			"sInfoPostFix": "",
+			"sSearch": "Buscar:",
+			"sUrl": "",
+			"oPaginate": {
+				"sFirst": "Primeiro",
+				"sPrevious": "Anterior",
+				"sNext": "Seguinte",
+				"sLast": "Último"
+			}
+		}
+	});
+</script>      
+
+
+
+</body>
+</html>
